@@ -24,5 +24,25 @@ public class MemoActivity extends AppCompatActivity {
 
             }
         });
+        Button btn2 = (Button)findViewById(R.id.btn3);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(
+                        getApplicationContext(),
+                        new2Activity.class);
+                startActivity(i);
+            }
+        });
+        Button btn3 = (Button)findViewById(R.id.btn4);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(
+                        getApplicationContext(),
+                        new3Activity.class);
+                startActivity(i);
+            }
+        });
     }
 }
