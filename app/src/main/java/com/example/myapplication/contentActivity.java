@@ -11,6 +11,10 @@ import android.widget.TextView;
 
 public class contentActivity extends AppCompatActivity {
 
+    SharedPreferences pref;
+
+    String id = pref.getString("first",null);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
