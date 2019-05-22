@@ -50,6 +50,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:id="@+id/back"
-            android:text="뒤로가기" />
+            android:text="+" />
     </LinearLayout>
 </LinearLayout>

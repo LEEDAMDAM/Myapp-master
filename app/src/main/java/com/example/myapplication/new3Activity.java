@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,11 +20,15 @@ public class new3Activity extends AppCompatActivity {
         buttonafter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent3 = new Intent(new3Activity.this,contentActivity.class);
 
                 EditText edit3 = (EditText) findViewById(R.id.edit3) ;
-                intent3.putExtra("contact_evening", edit3.getText().toString()) ;
 
+                SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(new3Activity.this);
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putString("contact_evening", edit3.getText().toString());
+                editor.apply();
+
+                Intent intent3 = new Intent(new3Activity.this,contentActivity.class);
                 startActivity(intent3);
             }
 

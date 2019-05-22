@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,26 +14,25 @@ public class NewActivity extends AppCompatActivity {
 
     Button bm;
 
-    private EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new);
 
-        SharedPreferences pref = getSharedPreferences("pref",MODE_PRIVATE);
-        SharedPreferences.Editor editor = pref.edit();
-            editor.putString("first","id");
-            editor.commit();
+        final EditText edit1 = (EditText) findViewById(R.id.edit1);
 
         Button bm = (Button) findViewById(R.id.save);
         bm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(NewActivity.this, contentActivity.class);
+                // 저장
+                SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(NewActivity.this);
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putString("contact_morning", edit1.getText().toString());
+                editor.apply();
 
-                EditText edit1 = (EditText) findViewById(R.id.edit1);
-                intent.putExtra("contact_morning", edit1.getText().toString());
+                Intent intent = new Intent(NewActivity.this, contentActivity.class);
                 startActivity(intent);
             }
 
