@@ -29,7 +29,6 @@ public class MainActivity2 extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_launcher_foreground);
 
         getSupportActionBar().setTitle("");
 

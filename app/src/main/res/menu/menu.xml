@@ -3,17 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/menu_cal"
-        android:title="calendar"
-        android:icon="@drawable/btn3"
-        app:showAsAction="always"
-        />
-    <item
         android:id="@+id/setting"
         android:title="setting"
-        android:icon="@drawable/btn2"
+        android:icon="@drawable/setting"
         app:showAsAction="always"
         />
-
 
 </menu>
