@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".settingActivity" />
-        <activity android:name=".contentActivity" />
+        <activity android:name=".contentActivity"
+            android:parentActivityName=".MainActivity2"/>
         <activity android:name=".new3Activity" />
         <activity android:name=".new2Activity" />
         <activity android:name=".NewActivity" />
